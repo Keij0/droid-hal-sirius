@@ -13,4 +13,13 @@
 #define QCOM_BSP 1\
 %{nil}
 
+# Remove /tmp from the makefstab entries
+# moved from droid-hal-device.inc
+%define makefstab_skip_entries /tmp
+
+%define straggler_files \
+/selinux_version\
+/service_contexts\
+%{nil}
+
 %include rpm/dhd/droid-hal-device.inc
