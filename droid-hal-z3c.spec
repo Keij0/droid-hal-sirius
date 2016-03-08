@@ -22,4 +22,9 @@
 /service_contexts\
 %{nil}
 
+# Add users to inet group (fix internet access issue)
+%define additional_post_scripts \
+/usr/bin/groupadd-user inet || :\
+%{nil}
+
 %include rpm/dhd/droid-hal-device.inc
